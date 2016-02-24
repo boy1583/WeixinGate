@@ -24,6 +24,14 @@
     Cron entry you need to add to your server:
     【* * * * * php /path/to/artisan schedule:run 1>> /dev/null 2>&1】
 
+###如何使用
+1. code凭据跳转
+    将所有应用的微信登录授权转发redirect_url改为http://weixingate.XXX.com/main/weixin/code_call_back，state改为应用标志（微信登陆成功会回带此参数）
+    配置数据库中的weixin_code_route，将state和route（即具体应用的登录逻辑路由）
+    即此功能为code凭据的二次转发
+2. 获取token和ticket接口（需提交weixin_id）：http://weixingate.XXX.com/main/weixin/get_token_ticket
+3. 获取js-sign接口（需提交weixin_id和url）：http://weixingate.XXX.com/main/weixin/get_sign
+
 ### License
 
 The framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
