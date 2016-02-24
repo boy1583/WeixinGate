@@ -17,13 +17,12 @@
 2. 安全性，理论上讲，只要公众号相应配置不在http协议中传输，即便获取相应的code或者access-token对系统的安全性影响不是很大（对此并不承诺）
 
 ###安装配置
-1. 环境配置 https://lumen.laravel.com/docs/5.2/installation
-2. 数据库安装 php artisan migrate
-3. 计划任务
+1. 配置.env
+2. 环境配置 https://lumen.laravel.com/docs/5.2/installation
+3. 数据库安装 php artisan migrate
+4. 计划任务
     Cron entry you need to add to your server:
     【* * * * * php /path/to/artisan schedule:run 1>> /dev/null 2>&1】
-
-
 
 ### License
 
