@@ -15,8 +15,6 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->get('/contact', function () use ($app) {
-    return $app->version();
-});
-
-
+$app->get('/main/weixin/code_call_back' , 'WeixinAuthController@codeCallBack');
+$app->get('/main/weixin/get_token_ticket' , 'WeixinAuthController@getTokenTicket');
+$app->get('/main/weixin/get_sign' , 'WeixinAuthController@getSign');

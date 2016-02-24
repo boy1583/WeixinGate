@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\WeixinSupport;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 try {
@@ -23,7 +25,7 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
 // $app->withEloquent();
 
@@ -47,6 +49,10 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
+
+$app->bind('WeixinSupport' , function($app , $weixin_id){
+    return new WeixinSupport($weixin_id);
+});
 
 /*
 |--------------------------------------------------------------------------
